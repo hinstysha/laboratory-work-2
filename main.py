@@ -31,7 +31,24 @@ def prime_numbers():
     print("Простые числа до 100: ", table_prime)
 
 
+def bubble_sort(arr):
+    """Пов. сложность № 1: сортировка списка пузырьком."""
+    a = arr
+    n = len(a)
+    for i in range(n - 1):
+        swapped = False
+        for j in range(n - 1 - i):
+            if a[j] > a[j + 1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+                swapped = True
+        print(f"после прохода {i + 1}: {a}")
+        if not swapped:
+            break
+    return n
+
+
 if __name__ == "__main__":
     multiplication_table()
     calculate_factorial(5)
     prime_numbers()
+    bubble_sort([5, 1, 4, 2, 8])
