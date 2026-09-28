@@ -3,7 +3,7 @@ import math
 
 
 def multiplication_table():
-    """Среднее № 1: вернуть таблицу умножения как список строк."""
+    """Среднее № 1: вывести таблицу умножения от 1 до 10."""
     print("Таблица умножения:")
     for i in range(1, 11):
         for j in range(1, 11):
@@ -12,39 +12,40 @@ def multiplication_table():
 
 
 def calculate_factorial(n):
-    """Среднее № 2: вернуть факторил числа."""
+    """Среднее № 2: вернуть факториал числа n."""
     result_factorial = math.factorial(n)
     print(f"Факторил числа {n} равен: {result_factorial}")
     return result_factorial
 
 
 def prime_numbers():
-    """Среднее № 3: Список простых чисел до 100."""
+    """Среднее № 5: вернуть список простых чисел до 100."""
     table_prime = []
     for n in range(2, 101):
-        count = 0
-        for i in range(1, n+1):
+        is_prime = True
+        for i in range(2, int(n ** 0.5) + 1):
             if n % i == 0:
-                count += 1
-        if count == 2:
+                is_prime = False
+                break
+        if is_prime:
             table_prime.append(n)
-    print("Простые числа до 100: ", table_prime)
+    print("Простые числа до 100:", table_prime)
+    return table_prime
 
 
 def bubble_sort(arr):
     """Пов. сложность № 1: сортировка списка пузырьком."""
-    a = arr
-    n = len(a)
+    n = len(arr)
     for i in range(n - 1):
         swapped = False
         for j in range(n - 1 - i):
-            if a[j] > a[j + 1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
-        print(f"после прохода {i + 1}: {a}")
+        print(f"после прохода {i + 1}: {arr}")
         if not swapped:
             break
-    return n
+    return arr
 
 
 if __name__ == "__main__":
