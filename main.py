@@ -18,6 +18,20 @@ def calculate_factorial(n):
     return result_factorial
 
 
+def prime_numbers():
+    """Среднее № 3: Список простых чисел до 100."""
+    table_prime = []
+    for n in range(2, 101):
+        count = 0
+        for i in range(1, n+1):
+            if n % i == 0:
+                count += 1
+        if count == 2:
+            table_prime.append(n)
+    print("Простые числа до 100: ", table_prime)
+
+
 if __name__ == "__main__":
     multiplication_table()
     calculate_factorial(5)
+    prime_numbers()
