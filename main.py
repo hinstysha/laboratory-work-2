@@ -1,5 +1,6 @@
 """Решение задач по 2 лабораторной работе."""
 import math
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -14,9 +15,9 @@ def multiplication_table():
 
 
 def calculate_factorial(n):
-    """Среднее № 2: вернуть факториал числа n."""
+    """Среднее № 3: вернуть факториал числа n."""
     result_factorial = math.factorial(n)
-    print(f"Факторил числа {n} равен: {result_factorial}")
+    print(f"Факториал числа {n} равен: {result_factorial}")
     return result_factorial
 
 
