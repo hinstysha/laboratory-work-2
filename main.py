@@ -1,5 +1,7 @@
 """Решение задач по 2 лабораторной работе."""
 import math
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def multiplication_table():
@@ -48,8 +50,22 @@ def bubble_sort(arr):
     return arr
 
 
+def plot_graph(x_min, x_max):
+    """Пов. сложность № 4: Построить график y=x^2 с matplotlib."""
+    x = np.linspace(x_min, x_max, 200)
+    y = x**2
+    plt.plot(x, y, label="y = x^2", color="blue", linewidth=2)
+    plt.title(f"График функции y = x^2 (от {x_min} до {x_max})")
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+
 if __name__ == "__main__":
     multiplication_table()
     calculate_factorial(5)
     prime_numbers()
     bubble_sort([5, 1, 4, 2, 8])
+    plot_graph(-5, 5)
